@@ -90,22 +90,31 @@ const TaskMenu = ({ text, menu, rowsState }: TaskMenuProps) => {
 	return (
 		<div className="flex justify-between border-t p-1 shadow-lg overflow-x-scroll">
 			<div className="flex">
-				<ButtonTaskList className="mr-8">{maximizeIcon}Open</ButtonTaskList>
+				<ButtonTaskList className="mr-8 ">
+					{maximizeIcon}
+					<span className="hidden xl:flex">Open</span>
+				</ButtonTaskList>
 				<ButtonTaskList Ref={todayButtonRef}>
-					{calendarIcon}Today
+					{calendarIcon}
+					<span className="hidden xl:flex">Today</span>
 				</ButtonTaskList>
 				<ButtonTaskList Ref={publicButtonRef}>
-					{unlockIcon}Public
+					{unlockIcon}
+					<span className="hidden xl:flex">Public</span>
 				</ButtonTaskList>
-				<ButtonTaskList Ref={normalButtonRef}>{discIcon}Normal</ButtonTaskList>
+				<ButtonTaskList Ref={normalButtonRef}>
+					{discIcon}
+					<span className="hidden xl:flex">Normal</span>
+				</ButtonTaskList>
 				<ButtonTaskList Ref={estimationButtonRef}>
-					{loaderIcon}Estimation
+					{loaderIcon}
+					<span className="hidden xl:flex">Estimation</span>
 				</ButtonTaskList>
 			</div>
 			<div className="flex">
-				<ButtonTaskList onClick={handleCancel}>Cancel</ButtonTaskList>
+				<ButtonTaskList onClick={handleCancel} className="xl:flex hidden">Cancel</ButtonTaskList>
 				<ButtonTaskList
-					className="text-white !bg-[#0d54ce]"
+					className="text-white !bg-[#0d54ce] !px-4"
 					onClick={handleOK}
 					Ref={buttonOkRef}
 				>
