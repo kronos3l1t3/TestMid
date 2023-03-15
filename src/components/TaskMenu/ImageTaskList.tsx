@@ -2,8 +2,8 @@ import React from 'react';
 import LazyImage from 'react-lazy-blur-image';
 
 interface ImageProps {
-	src: string,
-	style: string
+	src: any,
+	style: any
 
 	placeHolder: string
 
@@ -14,9 +14,9 @@ const CustomImage = ({ src, style, placeHolder, blurImage }: ImageProps) => {
 		<LazyImage
 			placeholder={placeHolder}
 			uri={blurImage}
-			render={(src, style) => <img src={src} style={style} />}
+			render={( src, style ) => <img src={src} style={style} />}
 		/>
 	);
 };
 
-export default CustomImage
+export default CustomImage;
