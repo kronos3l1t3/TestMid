@@ -14,7 +14,9 @@ const CustomImage = ({ src, style, placeHolder, blurImage }: ImageProps) => {
 		<LazyImage
 			placeholder={placeHolder}
 			uri={blurImage}
-			render={( src, style ) => <img src={src} style={style} />}
+			render={( src: any, style: any ) => {
+				return <img src={src} style={style}/>;
+			}}
 		/>
 	);
 };
